@@ -11,7 +11,6 @@ namespace Test.Unit.Infrastructure.Server
     [TestFixture]
     public class CryptographerTester
     {
-        [OneTimeSetUp]
         [Test]
         public void CanConstructCryptographer()
         {
