@@ -36,5 +36,22 @@ namespace BlockBoys.Tutorial.Blockchain.Infrastructure.WebApi.Controllers.v1
             var simpleBlockResponse = _blockStacker.CreateSimpleBlock(simpleBlockRequest);
             return Ok(simpleBlockResponse);
         }
+
+        /// <summary>
+        /// Create a hashed simpleBlock.
+        /// </summary>
+        /// <param name="simpleBlockRequest">Hash generation request.</param>
+        /// <response code="200">SimpleBlock created and hashed.</response>
+        // POST api/v1/simpleblock
+
+        [HttpPost, Route("mine")]
+        [ValidateModel]
+        [ProducesResponseType(typeof(BlockSimpleResponse), 200)]
+        [ProducesResponseType(typeof(BadRequestResult), 400)]
+        public IActionResult MineBlockSimple([FromBody]BlockSimpleRequest simpleBlockRequest)
+        {
+            var simpleBlockResponse = _blockStacker.MineSimpleBlock(simpleBlockRequest);
+            return Ok(simpleBlockResponse);
+        }
     }
 }
