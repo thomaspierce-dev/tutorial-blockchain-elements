@@ -1,6 +1,7 @@
 namespace BlockBoys.Tutorial.Blockchain.Infrastructure.Server
 {
     using System;
+    using AutoMapper;
     using BlockBoys.Tutorial.Blockchain.Core.Application.Messages;
     using BlockBoys.Tutorial.Blockchain.Core.Application.Services;
     using BlockBoys.Tutorial.Blockchain.Core.Domain.Factories;
@@ -11,11 +12,13 @@ namespace BlockBoys.Tutorial.Blockchain.Infrastructure.Server
     {
         private readonly ICryptoService _cryptoService;
         private readonly IBlockSimpleFactory _blockSimpleFactory;
+        private readonly IMapper _mapper;
 
-        public BlockStacker(ICryptoService cryptoService, IBlockSimpleFactory blockSimpleFactory)
+        public BlockStacker(ICryptoService cryptoService, IBlockSimpleFactory blockSimpleFactory, IMapper mapper)
         {
             _cryptoService = cryptoService ?? throw new ArgumentNullException(nameof(cryptoService));
             _blockSimpleFactory = blockSimpleFactory ?? throw new ArgumentNullException(nameof(blockSimpleFactory));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         public BlockSimpleResponse MineSimpleBlock(BlockSimpleRequest blockSimpleRequest)
@@ -27,7 +30,7 @@ namespace BlockBoys.Tutorial.Blockchain.Infrastructure.Server
 
             var blockSimple = GetBlockSimpleFromRequest(blockSimpleRequest);
             blockSimple.Mine();
-            return GetResponseFromBlockSimple(blockSimple);
+            return _mapper.Map<BlockSimpleResponse>(blockSimple);
         }
 
         public BlockSimpleResponse CreateSimpleBlock(BlockSimpleRequest blockSimpleRequest)
@@ -38,7 +41,7 @@ namespace BlockBoys.Tutorial.Blockchain.Infrastructure.Server
             }
 
             var blockSimple = GetBlockSimpleFromRequest(blockSimpleRequest);
-            return GetResponseFromBlockSimple(blockSimple);
+            return _mapper.Map<BlockSimpleResponse>(blockSimple);
         }
 
         private IBlockSimple GetBlockSimpleFromRequest(BlockSimpleRequest request)
@@ -49,17 +52,6 @@ namespace BlockBoys.Tutorial.Blockchain.Infrastructure.Server
                 request.BlockData,
                 request.Nonce
             );
-        }
-
-        private BlockSimpleResponse GetResponseFromBlockSimple(IBlockSimple blockSimple)
-        {
-            return new BlockSimpleResponse
-            {
-                BlockNumber = blockSimple.Number,
-                BlockData = blockSimple.Data,
-                Nonce = blockSimple.Nonce,
-                Hash = blockSimple.Hash
-            };
         }
     }
 }
