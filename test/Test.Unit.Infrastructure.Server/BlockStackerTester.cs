@@ -1,15 +1,10 @@
 namespace Test.Unit.Infrastructure.Server
 {
-    using System;
     using AutoMapper;
     using BlockBoys.Tutorial.Blockchain.Core.Application.Services;
     using BlockBoys.Tutorial.Blockchain.Core.Domain.Factories;
     using BlockBoys.Tutorial.Blockchain.Core.Domain.Services;
     using BlockBoys.Tutorial.Blockchain.Infrastructure.Server;
-    using CompanyName.Notebook.NoteTaking.Core.Application.Services;
-    using CompanyName.Notebook.NoteTaking.Core.Domain.Factories;
-    using CompanyName.Notebook.NoteTaking.Core.Domain.Services;
-    using CompanyName.Notebook.NoteTaking.Infrastructure.Server;
     using NSubstitute;
     using NUnit.Framework;
 
