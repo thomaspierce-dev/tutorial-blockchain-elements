@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Unit.Core", "Test.Unit.Core\Test.Unit.Core.csproj", "{80E167DA-2559-45C3-8091-942FB2B7B24C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Unit.Infrastructure.Data.MongoDb", "Test.Unit.Infrastructure.Data.MongoDb\Test.Unit.Infrastructure.Data.MongoDb.csproj", "{DC595115-3237-42D8-9EEF-67A247AB4695}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Unit.Infrastructure.Server", "Test.Unit.Infrastructure.Server\Test.Unit.Infrastructure.Server.csproj", "{9BDE4891-1FE7-4BDD-9220-9FD703DD9CEB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Unit.Infrastructure.WebApi", "Test.Unit.Infrastructure.WebApi\Test.Unit.Infrastructure.WebApi.csproj", "{C95EAB60-D7B5-4D9F-A489-C717A68493F4}"
@@ -36,18 +34,6 @@ Global
 		{80E167DA-2559-45C3-8091-942FB2B7B24C}.Release|x64.Build.0 = Release|Any CPU
 		{80E167DA-2559-45C3-8091-942FB2B7B24C}.Release|x86.ActiveCfg = Release|Any CPU
 		{80E167DA-2559-45C3-8091-942FB2B7B24C}.Release|x86.Build.0 = Release|Any CPU
-		{DC595115-3237-42D8-9EEF-67A247AB4695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC595115-3237-42D8-9EEF-67A247AB4695}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC595115-3237-42D8-9EEF-67A247AB4695}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{DC595115-3237-42D8-9EEF-67A247AB4695}.Debug|x64.Build.0 = Debug|Any CPU
-		{DC595115-3237-42D8-9EEF-67A247AB4695}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{DC595115-3237-42D8-9EEF-67A247AB4695}.Debug|x86.Build.0 = Debug|Any CPU
-		{DC595115-3237-42D8-9EEF-67A247AB4695}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC595115-3237-42D8-9EEF-67A247AB4695}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC595115-3237-42D8-9EEF-67A247AB4695}.Release|x64.ActiveCfg = Release|Any CPU
-		{DC595115-3237-42D8-9EEF-67A247AB4695}.Release|x64.Build.0 = Release|Any CPU
-		{DC595115-3237-42D8-9EEF-67A247AB4695}.Release|x86.ActiveCfg = Release|Any CPU
-		{DC595115-3237-42D8-9EEF-67A247AB4695}.Release|x86.Build.0 = Release|Any CPU
 		{9BDE4891-1FE7-4BDD-9220-9FD703DD9CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9BDE4891-1FE7-4BDD-9220-9FD703DD9CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BDE4891-1FE7-4BDD-9220-9FD703DD9CEB}.Debug|x64.ActiveCfg = Debug|Any CPU

@@ -9,20 +9,20 @@ namespace Test.Unit.Infrastructure.WebApi.Exceptions
     using NUnit.Framework;
 
     [TestFixture]
-    public class NoteBookExceptionFilterTester
+    public class BlockchainExceptionFilterTester
     {
         [Test]
-        public void CanConstructNoteBookExceptionFilter()
+        public void CanConstructBlockchainExceptionFilter()
         {
             // ARRANGE
-            var logger = Substitute.For<ILogger<NoteBookExceptionFilter>>();
+            var logger = Substitute.For<ILogger<BlockchainExceptionFilter>>();
 
             // ACT
-            var subjectUnderTest = new NoteBookExceptionFilter(logger);
+            var subjectUnderTest = new BlockchainExceptionFilter(logger);
 
             // ASSERT
             Assert.That(subjectUnderTest, Is.Not.Null);
-            Assert.That(subjectUnderTest, Is.TypeOf(typeof(NoteBookExceptionFilter)));
+            Assert.That(subjectUnderTest, Is.TypeOf(typeof(BlockchainExceptionFilter)));
         }
 
         public void OnExceptionHandlesUnauthorized()
@@ -39,8 +39,8 @@ namespace Test.Unit.Infrastructure.WebApi.Exceptions
             context.HttpContext.Returns(expectedHttpContext);
             expectedHttpContext.Response.Returns(expectedHttpResponse);
 
-            var logger = Substitute.For<ILogger<NoteBookExceptionFilter>>();
-            var subjectUnderTest = new NoteBookExceptionFilter(logger);
+            var logger = Substitute.For<ILogger<BlockchainExceptionFilter>>();
+            var subjectUnderTest = new BlockchainExceptionFilter(logger);
 
             // ACT
             subjectUnderTest.OnException(context);

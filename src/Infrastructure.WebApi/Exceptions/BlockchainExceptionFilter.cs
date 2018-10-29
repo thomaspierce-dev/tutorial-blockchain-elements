@@ -8,11 +8,11 @@ namespace CompanyName.Notebook.NoteTaking.Infrastructure.WebApi.Exceptions
     using Microsoft.Extensions.Logging;
     using Newtonsoft.Json;
 
-    public class NoteBookExceptionFilter : IExceptionFilter
+    public class BlockchainExceptionFilter : IExceptionFilter
     {
-        private readonly ILogger<NoteBookExceptionFilter> _logger;
+        private readonly ILogger<BlockchainExceptionFilter> _logger;
 
-        public NoteBookExceptionFilter(ILogger<NoteBookExceptionFilter> logger)
+        public BlockchainExceptionFilter(ILogger<BlockchainExceptionFilter> logger)
         {
             _logger = logger;
         }

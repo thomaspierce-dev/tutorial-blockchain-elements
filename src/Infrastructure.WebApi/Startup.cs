@@ -35,9 +35,9 @@
 
     public class Startup
     {
-        private readonly ILogger<NoteBookExceptionFilter> _logger;
+        private readonly ILogger<BlockchainExceptionFilter> _logger;
 
-        public Startup(IConfiguration configuration, ILogger<NoteBookExceptionFilter> logger)
+        public Startup(IConfiguration configuration, ILogger<BlockchainExceptionFilter> logger)
         {
             Configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -60,7 +60,7 @@
             // Add Framework services
             services
                 .AddMvc(config => {
-                    config.Filters.Add(typeof(NoteBookExceptionFilter));
+                    config.Filters.Add(typeof(BlockchainExceptionFilter));
                     config.AddMetricsResourceFilter();
                 })
                 .AddJsonOptions(opts => {
