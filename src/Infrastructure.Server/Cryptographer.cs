@@ -9,6 +9,8 @@ namespace BlockBoys.Tutorial.Blockchain.Infrastructure.Server
 
     public class Cryptographer : ICryptographer
     {
+        const string zeroHash = "0000000000000000000000000000000000000000000000000000000000000000";
+
         public HashResponse GenerateHash(HashRequest hashRequest)
         {
             var hashedMessage = GetSha256Hash(hashRequest.Message);

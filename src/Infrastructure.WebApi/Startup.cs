@@ -7,6 +7,8 @@
     using System.Threading.Tasks;
     using AutoMapper;
     using BlockBoys.Tutorial.Blockchain.Core.Application.Services;
+    using BlockBoys.Tutorial.Blockchain.Core.Domain.Factories;
+    using BlockBoys.Tutorial.Blockchain.Core.Domain.Services;
     using BlockBoys.Tutorial.Blockchain.Infrastructure.Server;
     using CompanyName.Notebook.NoteTaking.Core.Application.Services;
     using CompanyName.Notebook.NoteTaking.Core.Domain.Factories;
@@ -119,12 +121,15 @@
             // Add Application services.
             services.AddSingleton<INoteFactory, NoteFactory>();
             services.AddSingleton<ISubscriberFactory, SubscriberFactory>();
+            services.AddSingleton<ICryptoService, CryptoService>();
+            services.AddSingleton<IBlockSimpleFactory, BlockSimpleFactory>();
             services.AddSingleton<ICategoryFactory, CategoryFactory>();
             services.AddTransient<ICategoryRepository>(sp =>
                 new CategoryRepository(Configuration.GetConnectionString("NoteTakingService"), sp.GetRequiredService<IMapper>()));
             services.AddTransient<INoteTaker, NoteTaker>();
             services.AddTransient<IRegistrar, Registrar>();
             services.AddTransient<ICryptographer, Cryptographer>();
+            services.AddTransient<IBlockStacker, BlockStacker>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

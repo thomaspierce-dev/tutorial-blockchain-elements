@@ -29,7 +29,7 @@ namespace BlockBoys.Tutorial.Blockchain.Infrastructure.WebApi.Controllers.v1
 
         [HttpPost, Route("")]
         [ValidateModel]
-        [ProducesResponseType(typeof(string), 200)]
+        [ProducesResponseType(typeof(HashResponse), 200)]
         [ProducesResponseType(typeof(BadRequestResult), 400)]
         public IActionResult Post([FromBody]HashRequest hashRequest)
         {
