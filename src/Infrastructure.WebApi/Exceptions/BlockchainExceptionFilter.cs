@@ -1,4 +1,4 @@
-namespace CompanyName.Notebook.NoteTaking.Infrastructure.WebApi.Exceptions
+namespace BlockBoys.Tutorial.Blockchain.Infrastructure.WebApi.Exceptions
 {
     using System;
     using System.Net;

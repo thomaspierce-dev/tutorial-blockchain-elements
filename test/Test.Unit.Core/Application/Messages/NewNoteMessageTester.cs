@@ -1,37 +1,35 @@
 namespace Test.Unit.Core.Application.Messages
 {
-    using System;
-    using CompanyName.Notebook.NoteTaking.Core.Application.Messages;
-    using NSubstitute;
+    using BlockBoys.Tutorial.Blockchain.Core.Application.Messages;
     using NUnit.Framework;
 
     [TestFixture]
-    public class NewNoteMessageTester
+    public class BlockSimpleRequestTester
     {
         [Test]
-        public void CanCreateNewNoteMessage()
+        public void CanCreateBlockSimpleRequest()
         {
             // ARRANGE
 
             // ACT
-            var subjectUnderTest = new NewNoteMessage();
+            var subjectUnderTest = new BlockSimpleRequest();
 
             // ASSERT
-            Assert.That(subjectUnderTest, Is.TypeOf(typeof(NewNoteMessage)));
+            Assert.That(subjectUnderTest, Is.TypeOf(typeof(BlockSimpleRequest)));
         }
 
         [Test]
-        public void CanSetText()
+        public void CanSetBlockData()
         {
             // ARRANGE
-            var expectedText = "Don't to forget to pick up bread from the grocery store.";
-            var subjectUnderTest = new NewNoteMessage();
+            var expectedBlockData = "Don't to forget to pick up bread from the grocery store.";
+            var subjectUnderTest = new BlockSimpleRequest();
 
             // ACT
-            subjectUnderTest.Text = expectedText;
+            subjectUnderTest.BlockData = expectedBlockData;
 
             // ASSERT
-            Assert.That(subjectUnderTest.Text, Is.EqualTo(expectedText));
+            Assert.That(subjectUnderTest.BlockData, Is.EqualTo(expectedBlockData));
         }
     }
 }

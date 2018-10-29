@@ -1,7 +1,7 @@
 namespace Test.Unit.Infrastructure.WebApi.Exceptions
 {
     using System;
-    using CompanyName.Notebook.NoteTaking.Infrastructure.WebApi.Exceptions;
+    using BlockBoys.Tutorial.Blockchain.Infrastructure.WebApi.Exceptions;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc.Filters;
     using Microsoft.Extensions.Logging;

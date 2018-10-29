@@ -1,4 +1,4 @@
-namespace CompanyName.Notebook.NoteTaking.Infrastructure.WebApi.Authorization.Requirements
+namespace BlockBoys.Tutorial.Blockchain.Infrastructure.WebApi.Authorization.Requirements
 {
     using System.Linq;
     using System.Threading.Tasks;

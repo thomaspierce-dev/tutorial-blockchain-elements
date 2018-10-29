@@ -10,12 +10,8 @@
     using BlockBoys.Tutorial.Blockchain.Core.Domain.Factories;
     using BlockBoys.Tutorial.Blockchain.Core.Domain.Services;
     using BlockBoys.Tutorial.Blockchain.Infrastructure.Server;
-    using CompanyName.Notebook.NoteTaking.Core.Application.Services;
-    using CompanyName.Notebook.NoteTaking.Core.Domain.Factories;
-    using CompanyName.Notebook.NoteTaking.Core.Domain.Services;
-    using CompanyName.Notebook.NoteTaking.Infrastructure.Server;
-    using CompanyName.Notebook.NoteTaking.Infrastructure.WebApi.Authorization.Requirements;
-    using CompanyName.Notebook.NoteTaking.Infrastructure.WebApi.Exceptions;
+    using BlockBoys.Tutorial.Blockchain.Infrastructure.WebApi.Authorization.Requirements;
+    using BlockBoys.Tutorial.Blockchain.Infrastructure.WebApi.Exceptions;
     using FluentValidation.AspNetCore;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Builder;
@@ -93,14 +89,14 @@
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("https://company.dev/notetaking/pingsecure", 
-                    policy => policy.Requirements.Add(new HasScopeRequirement("https://company.dev/notetaking/pingsecure", domain)));
-                options.AddPolicy("https://company.dev/notetaking/default", 
-                    policy => policy.Requirements.Add(new HasScopeRequirement("https://company.dev/notetaking/default", domain)));
-                options.AddPolicy("https://company.dev/notetaking/categories:read", 
-                    policy => policy.Requirements.Add(new HasScopeRequirement("https://company.dev/notetaking/categories:read", domain)));
-                options.AddPolicy("https://company.dev/notetaking/categories:write", 
-                    policy => policy.Requirements.Add(new HasScopeRequirement("https://company.dev/notetaking/categories:write", domain)));
+                options.AddPolicy("https://company.dev/blockcaintutorial/pingsecure", 
+                    policy => policy.Requirements.Add(new HasScopeRequirement("https://company.dev/blockcaintutorial/pingsecure", domain)));
+                options.AddPolicy("https://company.dev/blockcaintutorial/default", 
+                    policy => policy.Requirements.Add(new HasScopeRequirement("https://company.dev/blockcaintutorial/default", domain)));
+                options.AddPolicy("https://company.dev/blockcaintutorial/hash", 
+                    policy => policy.Requirements.Add(new HasScopeRequirement("https://company.dev/blockcaintutorial/hash", domain)));
+                options.AddPolicy("https://company.dev/blockcaintutorial/mine:", 
+                    policy => policy.Requirements.Add(new HasScopeRequirement("https://company.dev/blockcaintutorial/mine", domain)));
             });
             
 
@@ -108,9 +104,9 @@
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info {
-                    Title = "Note Taking API",
+                    Title = "Blockchain Tutoral API",
                     Version = "v1",
-                    Description = "Microservice reference architecture featuring DDD and Onion.",
+                    Description = "API showcasing elemental blockchain building blocks and operations.",
                     TermsOfService = "None",
                     Contact = new Contact { Name = "Walter Pinson", Email = "", Url = "https://github.com/walterpinson" },
                 });
@@ -139,7 +135,7 @@
                         var ex = context.Features.Get<IExceptionHandlerFeature>();
                         if (ex != null)
                         {
-                            _logger.LogError(0, ex.Error, "Unhandled exception in Note Taker service.");
+                            _logger.LogError(0, ex.Error, "Unhandled exception in Blockchain Tutorial service.");
                             var result = JsonConvert.SerializeObject(new { error = ex.Error.Message, innerError = ex.Error.InnerException.Message });
                             await context.Response.WriteAsync(result).ConfigureAwait(false);
                         }
@@ -153,7 +149,7 @@
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Note Taking API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Blockchain Tutorial API V1");
             });
 
             app.UseAuthentication();

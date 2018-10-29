@@ -1,7 +1,7 @@
 namespace Test.Unit.Infrastructure.Server
 {
     using AutoMapper;
-    using CompanyName.Notebook.NoteTaking.Infrastructure.Server;
+    using BlockBoys.Tutorial.Blockchain.Infrastructure.Server;
     using NUnit.Framework;
 
     [TestFixture]

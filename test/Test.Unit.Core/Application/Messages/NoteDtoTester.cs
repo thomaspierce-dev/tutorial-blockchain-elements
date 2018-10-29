@@ -1,65 +1,36 @@
 namespace Test.Unit.Core.Application.Messages
 {
     using System;
-    using CompanyName.Notebook.NoteTaking.Core.Application.Messages;
-    using NSubstitute;
+    using BlockBoys.Tutorial.Blockchain.Core.Application.Messages;
     using NUnit.Framework;
 
     [TestFixture]
-    public class NoteDtoTester
+    public class BlockSimpleResponseTester
     {
         [Test]
-        public void CanCreateNoteDto()
+        public void CanCreateBlockSimpleResponse()
         {
             // ARRANGE
 
             // ACT
-            var subjectUnderTest = new NoteDto();
+            var subjectUnderTest = new BlockSimpleResponse();
 
             // ASSERT
-            Assert.That(subjectUnderTest, Is.TypeOf(typeof(NoteDto)));
+            Assert.That(subjectUnderTest, Is.TypeOf(typeof(BlockSimpleResponse)));
         }
 
         [Test]
-        public void CanSetId()
+        public void CanSetBlockData()
         {
             // ARRANGE
-            var expectedId = Guid.NewGuid();
-            var subjectUnderTest = new NoteDto();
+            var expectedBlockData = "Don't to forget to pick up bread from the grocery store.";
+            var subjectUnderTest = new BlockSimpleResponse();
 
             // ACT
-            subjectUnderTest.Id = expectedId;
+            subjectUnderTest.BlockData = expectedBlockData;
 
             // ASSERT
-            Assert.That(subjectUnderTest.Id, Is.EqualTo(expectedId));
-        }
-
-        [Test]
-        public void CanSetText()
-        {
-            // ARRANGE
-            var expectedText = "Don't to forget to pick up bread from the grocery store.";
-            var subjectUnderTest = new NoteDto();
-
-            // ACT
-            subjectUnderTest.Text = expectedText;
-
-            // ASSERT
-            Assert.That(subjectUnderTest.Text, Is.EqualTo(expectedText));
-        }
-
-        [Test]
-        public void CanSetCreated()
-        {
-            // ARRANGE
-            var expectedCreated = new DateTime(1999, 1, 1);
-            var subjectUnderTest = new NoteDto();
-
-            // ACT
-            subjectUnderTest.Created = expectedCreated;
-
-            // ASSERT
-            Assert.That(subjectUnderTest.Created, Is.EqualTo(expectedCreated));
+            Assert.That(subjectUnderTest.BlockData, Is.EqualTo(expectedBlockData));
         }
     }
 }

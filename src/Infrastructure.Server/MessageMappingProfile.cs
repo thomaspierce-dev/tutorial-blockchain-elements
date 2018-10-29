@@ -1,4 +1,4 @@
-namespace CompanyName.Notebook.NoteTaking.Infrastructure.Server
+namespace BlockBoys.Tutorial.Blockchain.Infrastructure.Server
 {
     using AutoMapper;
     using BlockBoys.Tutorial.Blockchain.Core.Application.Messages;
