@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "b59f949d-54af-483d-9b64-712cadcb4474",
+		"name": "Tutorial - Blockchain",
+		"description": "This API is developed to support various blockchian tutorials.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generate Hash",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"message\": \"This is my rifle.  This is my gun!\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/hash",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"hash"
+					]
+				},
+				"description": "This API endpoint can be used to generate a SHA256 hash represented by a 64 character string."
+			},
+			"response": []
+		},
+		{
+			"name": "Create Simple Block",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"blockNumber\": 1,\n\t\"BlockData\": \"Really important data!\",\n\t\"Nonce\": 1\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/blockSimple",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blockSimple"
+					]
+				},
+				"description": "This API endpoint can be used to create and hash a new block."
+			},
+			"response": []
+		},
+		{
+			"name": "Mine Simple Block",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"blockNumber\": 1,\n\t\"BlockData\": \"Really important data!\",\n\t\"Nonce\": 2\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/blockSimple/mine",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blockSimple",
+						"mine"
+					]
+				},
+				"description": "Create a simpleBlock and then mine it such that it solves the hash puzzle."
+			},
+			"response": []
+		}
+	]
+}
