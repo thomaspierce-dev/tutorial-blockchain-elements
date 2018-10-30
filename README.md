@@ -1,7 +1,7 @@
 # Getting Started
 
 ## Overview
-This repository, `reference-architecture-api`, is a core component of an overall reference architecture that I promote for building secure enterprise and Internet-scale web applications.  The is API repository can be used as a template to build microservices in an efficient and repeatable way. There is no need to reinvent the wheel and many best practices are already baked into this solution.
+This repository, `tutorial-blockchain-elements`, is a core component of an overall reference architecture that I promote for building secure enterprise and Internet-scale web applications.  The is API repository can be used as a template to build microservices in an efficient and repeatable way. There is no need to reinvent the wheel and many best practices are already baked into this solution.
 
 This example API is built on the .NET Core and is cross platform compatiable.  It can run locally on any platform that can host .NET Core and is specifically implemented to run within Linux-based Docker containers.
 
@@ -70,13 +70,13 @@ You will need to install Docker on your local development machine.
 2. Install [Docker for Mac][8]
 
 ## Fork the Repository
-Navigate in your browswer to the reference-architecture-api repository.
-https://github.com/walterpinson/reference-architecture-api
+Navigate in your browswer to the tutorial-blockchain-elements repository.
+https://github.com/walterpinson/tutorial-blockchain-elements
 
 Follow the GitHub instructions for [Forking a Repository][10].
 
 ## Clone the Fork
-Navigate to your fork of the reference-architecture-api repository.  Follow the GitHub instructions for [Cloning a Repository][11].
+Navigate to your fork of the tutorial-blockchain-elements repository.  Follow the GitHub instructions for [Cloning a Repository][11].
 
 ## Build / Test
 You can manually build the API on your local host by running the following commands in a git-bash window, terminal window, or Windows command-line window after switching to the repository root directory.
@@ -131,7 +131,7 @@ This command deletes any existing containers, and rebuilds the source, rebuilds 
 
 
 ## Documentation
-You can find further documentation detailing the concepts behind this reference architecture in the [reference-architecture-api Wiki][7].
+You can find further documentation detailing the concepts behind this reference architecture in the [tutorial-blockchain-elements Wiki][7].
 
 [1]: https://www.microsoft.com/net/learn/get-started/ "Get started with .NET in 10 Minutes"
 [2]: https://desktop.github.com/ "GitHub Desktop"
@@ -139,7 +139,7 @@ You can find further documentation detailing the concepts behind this reference 
 [4]: https://www.mongodb.com/download-center#atlas "MongoDB"
 [5]: https://mlab.com "mLab"
 [6]: https://hub.docker.com/_/mongo/ "Official Mongo Repository"
-[7]: https://github.com/walterpinson/reference-architecture-api/wiki "reference-architecture-api Wiki"
+[7]: https://github.com/walterpinson/tutorial-blockchain-elements/wiki "tutorial-blockchain-elements Wiki"
 [8]: https://docs.docker.com/docker-for-mac/install/ "Docker for Mac"
 [9]: https://docs.docker.com/docker-for-windows/install/ "Docker for Windows"
 [10]: https://help.github.com/articles/fork-a-repo/ "Fork a Repository"
