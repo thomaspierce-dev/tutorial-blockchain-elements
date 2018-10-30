@@ -103,8 +103,6 @@ There are a number of scripts that can be used to expedite each aspect of the ma
 sh/run.sh
 ```
 
-_NOTE: This approach still requires a running MongoDb database in the local environment._
-
 This command deletes any existing containers, and rebuilds the source, rebuilds the docker image, and reruns the container.  This is your go-to command. When you make some code changes and you want your running docker container to reflect those code changes, this is is the command that you run.
 
 #### Build the source and publish the application
