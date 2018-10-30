@@ -57,13 +57,6 @@ Though they are not required, it may also be useful to install [GitHub for Windo
 ### .Net Command-Line Interface
 You will want to install the [dotnet-cli][1] and associated tools.  The build script used in this repository have a dependency on the .NET command-line tools.
 
-### MongoDB
-There are a couple of different options for satisfying the MongoDB requirement.
-
-1. You can [download the MongoDB binaries][4] and install directly onto your local development machine.
-1. You can downlaod the official [MongoDB Docker image][6] and run that locally.
-1. You can use a hosted docker service, like [mLab][5] or Azure's CosmoDB.
-
 ### Docker
 You will need to install Docker on your local development machine.
 1. Install [Docker for Windows][9]
@@ -104,12 +97,6 @@ The [dotnet command-line interface documentation][12] is quite useful for those 
 ## Run
 There are a number of scripts that can be used to expedite each aspect of the manual build process or tie them all together in order to get the application running in a Docker container.
 
-### Build and run the application stack
-```bash
-sh/runstack.sh
-```
-
-This command runs the API and the supporting MongoDb database server as Docker service stack.
 
 ### Build and run the application as a docker container
 ```bash
@@ -136,9 +123,7 @@ You can find further documentation detailing the concepts behind this reference 
 [1]: https://www.microsoft.com/net/learn/get-started/ "Get started with .NET in 10 Minutes"
 [2]: https://desktop.github.com/ "GitHub Desktop"
 [3]: https://git-scm.com/downloads "Git SCM"
-[4]: https://www.mongodb.com/download-center#atlas "MongoDB"
 [5]: https://mlab.com "mLab"
-[6]: https://hub.docker.com/_/mongo/ "Official Mongo Repository"
 [7]: https://github.com/walterpinson/tutorial-blockchain-elements/wiki "tutorial-blockchain-elements Wiki"
 [8]: https://docs.docker.com/docker-for-mac/install/ "Docker for Mac"
 [9]: https://docs.docker.com/docker-for-windows/install/ "Docker for Windows"
