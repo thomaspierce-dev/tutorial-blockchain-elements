@@ -5,7 +5,8 @@ namespace BlockBoys.Tutorial.Blockchain.Core.Domain.Models
     public class Block
     {
         public BlockHeader Header { get; set; }
-        public ulong Nonce { get; set; }
         public IList<Transaction> Transactions { get; set; }
+        public ulong Nonce { get; set; }
+        public string Hash { get; set; }
     }
 }

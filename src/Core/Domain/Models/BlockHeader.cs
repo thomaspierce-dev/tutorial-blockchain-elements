@@ -8,5 +8,6 @@ namespace BlockBoys.Tutorial.Blockchain.Core.Domain.Models
         public string Version { get; set; }
         public string PreviousHash { get; set; }
         public string TransactionHash { get; set; } // Merkle Root
+        public string Target { get; set; }  // level of difficulty
     }
 }
